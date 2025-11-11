@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bom Sabor Delivery</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>🍽️ Bom Sabor Delivery</h1>
+    <nav>
+      <a href="/">Início</a>
+      <a href="/contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <h2>Comida Nordestina com Sabor e Tradição!</h2>
+    <p>Peça agora e receba quentinho na sua casa 😋</p>
+  </section>
+
+  <section class="menu">
+    <h2>Nosso Cardápio</h2>
+    <div class="pratos">
+      {% for prato in pratos %}
+      <div class="card">
+        <img src="/static/imagens/{{ prato.img }}" alt="{{ prato.nome }}">
+        <div class="card-content">
+          <h3>{{ prato.nome }}</h3>
+          <p>{{ prato.descricao }}</p>
+          <p class="preco">R$ {{ "%.2f"|format(prato.preco) }}</p>
+          <a href="https://wa.me/5588921494170?text=Olá! Quero pedir o prato {{ prato.nome }}" class="btn">Pedir Agora</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Bom Sabor Delivery - Feito com ❤️ no Nordeste</p>
+  </footer>
+</body>
+</html>
