@@ -1,4 +1,25 @@
-body {
+body {body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  color: #fff; /* texto branco pra contrastar */
+  background-image: url('/static/imagens/fundo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+/* efeito leve de sombra no fundo pra legibilidade */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* escurece o fundo 40% */
+  z-index: -1;
+}
   font-family: 'Poppins', sans-serif;
   margin: 0;
   background: #fff8f0;
